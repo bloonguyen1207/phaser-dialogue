@@ -1,0 +1,9 @@
+{
+  "name": "dialogue",
+  "version": "1.0.0",
+  "description": "A phaser dialogue plugin",
+  "main": "index.js",
+  "repository": "https://github.com/bloonguyen1207/dialogue",
+  "author": "Bloo Nguyen",
+  "license": "MIT"
+}
