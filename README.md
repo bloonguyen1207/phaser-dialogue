@@ -1,2 +1,2 @@
-# dialogue
-A Phaser plugin for dialogue
+# phaser-dialogue
+A Phaser 3 plugin for dialogue
