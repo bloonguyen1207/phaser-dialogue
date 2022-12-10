@@ -5,13 +5,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/game.ts',
+    entry: './src/game/game.ts',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'images/[hash][ext][query]',
+    },
     module: {
       rules: [
         {
           test: /\.ts?$/,
           use: 'ts-loader',
           exclude: /node_modules/,
+        },
+        {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
         },
       ],
     },
@@ -20,10 +33,6 @@ module.exports = {
       alias: {
         '~': path.resolve(__dirname, '../src'),
       },
-    },
-    output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
       new webpack.DefinePlugin({
@@ -36,8 +45,8 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
           title: 'Demo', 
-          template: './src/game.html' 
-      }) 
+          template: './src/game/game.html'
+      }),
     ],
     devServer: {
       static: path.join(__dirname, "dist"),

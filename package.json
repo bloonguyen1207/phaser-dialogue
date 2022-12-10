@@ -6,15 +6,11 @@
   "repository": "https://github.com/bloonguyen1207/dialogue",
   "author": "Bloo Nguyen",
   "license": "MIT",
-  "engines": {
-    "node": "19.0.0"
-  },
   "scripts": {
     "develop": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "phaser": "^3.55.2"
   },
   "devDependencies": {
@@ -23,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "eslint": "^8.26.0",
     "html-webpack-plugin": "^5.5.0",
     "process": "^0.11.10",
