@@ -9,14 +9,14 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'images/[hash][ext][query]',
+        assetModuleFilename: 'assets/[hash][ext][query]',
     },
     module: {
       rules: [
         {
-          test: /\.ts?$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
+            test: /\.ts?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
         },
         {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
