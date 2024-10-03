@@ -1,16 +1,24 @@
-import textbox from '../../assets/images/textbox1.png'
+import dialogueData from '../../assets/dialogues/demo.json'
+import DialoguePlugin from '../../plugin/main';
 
 export default class Demo extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('demo')
   }
 
-  preload (): void {
-    this.load.image('test_textbox', textbox)
+  preload() {
+    this.load.json('demoDialogue', dialogueData);
   }
 
-  create (): void {
-    this.add.text(50, 50, 'Hello world!')
-    this.add.image(100, 200, 'test_textbox')
+  create() {
+    console.log('create demo scene')
+    let plugin = this.plugins.get('DialoguePlugin') as DialoguePlugin;
+
+    console.log(this.cache.json.get('demoDialogue'));
+
+    plugin.startDialogue(this.scene.key, this.cache.json.get('demoDialogue'))
+
+    console.log(dialogueData)
+
   }
 }
